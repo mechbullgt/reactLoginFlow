@@ -1,0 +1,7 @@
+{
+    "mongoDb":{
+        "dburl":"mongodb://maqbool:1ansari@ds151753.mlab.com:51753/",
+        "collectionName":"user_details"
+    }
+}
+
