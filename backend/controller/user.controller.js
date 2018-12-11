@@ -26,5 +26,31 @@ module.exports ={
         })
         console.log('Ended user registeration process');
     },
-    
+    users:(req,res)=>{
+        console.log("Started Finding all users")
+        UserModel.find(function(err, users){
+            if(err){
+                return next(err);
+            } 
+            res.send(users);
+        })
+        console.log("Ended finding all users")
+    },
+    login:(req,res)=>{
+        console.log("Started: Logging in the user");
+        UserModel.findOne({userid:req.body.userid},function(err, user){
+            if(err){
+                res.send("User doesn't exist");
+            } else if(user){
+                console.log("User exist, verifying password");
+                if(user.password==req.body.password){
+                    res.send("User exists, login success");
+                    console.log("Login Success!")
+                }
+                res.send("Password not correct, please try again.");
+            }
+            res.send("Invalid userid, please register");
+        })
+        console.log("Ended: User Login")
+    }
 }
