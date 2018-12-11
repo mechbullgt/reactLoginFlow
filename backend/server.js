@@ -17,8 +17,9 @@ const user = require('./routes/user.routes');
 Module:multer
 multer is middleware used to handle multipart form data
 */
-var multer = require('multer');
-var multerupload = multer({ dest: 'fileprint/' })
+// var multer = require('multer');
+// var multerupload = multer({ dest: 'fileprint/' })
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
