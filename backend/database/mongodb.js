@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const envConfig = require('../envVars');
+const middleware = require('../web/middleware/authorization.middleware');
+// const envConfig = rootRequire('envVars.js');
 
 // MonogoDb initalization
 function databaseInit(){
@@ -18,9 +20,11 @@ function databaseInit(){
     // Connection Success
     mongoose.connection.on('connected',()=>{
         console.log('Connected to database mongodb');
+        middleware.checkIntegration();
     })
     // Connection Failure
     mongoose.connection.on('error',console.error.bind(console,'MongoDB Connection Error:'));
 }
+
 
 module.exports= {databaseInit};

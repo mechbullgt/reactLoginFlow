@@ -19,6 +19,8 @@
     "node-session": "^1.2.1",
     "promise": "^7.1.1",
     "rmfr": "^1.0.2",
-    "nconf": "^0.10.0"
+    "nconf": "^0.10.0",
+    "bcrypt": "3.0.2",
+    "jsonwebtoken": "8.4.0"
   }
 }

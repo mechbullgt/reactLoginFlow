@@ -12,6 +12,8 @@ router.post('/register',_userController.register);
 router.get('/users',_userController.users);
 // Route 3: Validate User / Login, Type POST, /api/login
 router.post('/login',_userController.login);
+// Route 4: Get Access Token, Type POST, /api/getToken
+router.post('/getAccessToken',_userController.getToken);
 
 // Expose the router for further usage
 module.exports = router;
